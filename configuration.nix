@@ -132,6 +132,7 @@
     (vscode-with-extensions.override {
       vscodeExtensions = with vscode-extensions; [
         jnoortheen.nix-ide
+        ms-azuretools.vscode-docker
       ];
     })
   ];
