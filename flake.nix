@@ -4,10 +4,11 @@
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, ... }:
+  outputs = { self, nixpkgs, nixpkgs-unstable, ... }:
   let
+    system = "x86_64-linux";
     unstable = import nixpkgs-unstable {
-      system = "x86_64-linux";
+      inherit system;
       config.allowUnfree = true;
     };
   in {
@@ -15,7 +16,7 @@
       modules = [
         ./configuration.nix
         {
-          _module.args = { inherit inputs; unstable = unstable; };
+          _module.args = { inherit unstable; };
         }
       ];
     };
