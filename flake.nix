@@ -1,24 +1,13 @@
 {
   inputs = {
+    den.url = "github:vic/den";
+    import-tree.url = "github:vic/import-tree";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, ... }:
-  let
-    system = "x86_64-linux";
-    unstable = import nixpkgs-unstable {
-      inherit system;
-      config.allowUnfree = true;
-    };
-  in {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      modules = [
-        ./configuration.nix
-        {
-          _module.args = { inherit unstable; };
-        }
-      ];
-    };
-  };
+  outputs = inputs@{ flake-parts, import-tree, ... }:
+  flake-parts.lib.mkFlake { inherit inputs; } (import-tree ./modules);
 }

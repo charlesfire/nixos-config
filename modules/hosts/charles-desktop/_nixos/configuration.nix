@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, unstable, ... }:
+{ config, pkgs, ... }:
 
 {
   imports =
@@ -21,7 +21,7 @@
     theme = "breeze";
   };
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "charles-desktop"; # Define your hostname.
 
   # Enables wireless support via iwd.
   networking.wireless.iwd.enable = true;
@@ -82,7 +82,7 @@
       airshipper
       openrct2
       archipelago
-      unstable.graphite
+      #unstable.graphite
     ];
   };
 
