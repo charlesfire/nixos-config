@@ -11,6 +11,7 @@
       users.users.${user.userName}.packages = with pkgs; [
         kdePackages.kate
         nixd
+        quickemu
       ];
     };
   };
