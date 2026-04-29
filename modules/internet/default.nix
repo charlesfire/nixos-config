@@ -9,7 +9,7 @@
         kdePackages.krdc
         thunderbird
         qbittorrent
-        discord
+        element-desktop
       ];
 
       programs.firefox.enable = true;

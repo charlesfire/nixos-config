@@ -25,6 +25,8 @@
       environment.systemPackages = with pkgs; [
         eza
         parted
+        nh
+        comma
       ];
 
       # This value determines the NixOS release from which the default
