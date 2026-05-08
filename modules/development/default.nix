@@ -5,6 +5,7 @@
       docker
       git
       vscode
+      virt-manager
     ];
 
     nixos = { pkgs, ... }: {
