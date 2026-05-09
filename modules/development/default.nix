@@ -4,8 +4,9 @@
       direnv
       docker
       git
-      vscode
+      ollama
       virt-manager
+      vscode
     ];
 
     nixos = { pkgs, ... }: {
