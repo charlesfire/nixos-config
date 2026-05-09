@@ -6,6 +6,7 @@
         airshipper
         openrct2
         archipelago
+        faugus-launcher
       ];
     };
   };
