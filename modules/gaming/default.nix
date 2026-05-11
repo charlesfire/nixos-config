@@ -3,6 +3,7 @@
     includes = with den.aspects; [
       games
       steam
+      peacock
     ];
 
     nixos = { ... }: {
