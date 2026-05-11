@@ -1,7 +1,7 @@
 {
   den.aspects.peacock = {
-    nixos = { user, pkgs, ... }: {
-      users.users.${user.userName}.packages = with pkgs; [
+    nixos = { user, inputs', ... }: {
+      users.users.${user.userName}.packages = with inputs'.nixpkgs-unstable.legacyPackages; [
         peacock
       ];
     };
