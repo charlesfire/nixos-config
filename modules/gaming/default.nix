@@ -2,8 +2,9 @@
   den.aspects.gaming = {
     includes = with den.aspects; [
       games
-      steam
+      multiworldgg
       peacock
+      steam
     ];
 
     nixos = { ... }: {
