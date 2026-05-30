@@ -1,5 +1,5 @@
 { den, ... }: {
-  den.ctx.user.includes = [ den._.mutual-provider ];
+  den.schema.user.includes = [ den.batteries.mutual-provider ];
   
   den.default.homeManager.home.stateVersion = "25.11";
 

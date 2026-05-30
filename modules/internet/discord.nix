@@ -1,5 +1,6 @@
 { den, ... }: {
-  den.aspects.internet.discord = let
+  den.aspects.internet.discord =
+  let
     discord = den.aspects.batteries.pkgs (pkgs: [ pkgs.discord ]);
   in {
     includes = [
