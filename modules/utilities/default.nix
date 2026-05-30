@@ -1,14 +1,10 @@
 { den, ... }: {
-  den.aspects.utilities = { user, ... }: {
+  den.aspects.utilities = {
     includes = with den.aspects; [
-      obsidian
+      utilities._
     ];
 
-    nixos = { pkgs, ... }: {
-      users.users.${user.userName}.packages = with pkgs; [
-        qalculate-qt
-        gparted
-      ];
-    };
+    gparted = den.aspects.batteries.pkgs (pkgs: [ pkgs.gparted ]);
+    qalculate = den.aspects.batteries.pkgs (pkgs: [ pkgs.qalculate-qt ]);
   };
 }

@@ -1,5 +1,5 @@
 {
-  den.aspects.docker = {
+  den.aspects.development.docker = {
     nixos.virtualisation.docker = {
       enable = true;
       storageDriver = "btrfs";

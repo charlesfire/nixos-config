@@ -1,10 +1,10 @@
 { den, ... }: {
-  den.aspects.vscode = { user, ... }: {
+  den.aspects.development.vscode = {
     includes = [
       (den.provides.unfree [ "vscode" "vscode-with-extensions" ])
     ];
 
-    nixos = { pkgs, ... }: {
+    nixos = { user, pkgs, ... }: {
       users.users.${user.userName}.packages = with pkgs; [
         (vscode-with-extensions.override {
           vscodeExtensions = with vscode-extensions; [

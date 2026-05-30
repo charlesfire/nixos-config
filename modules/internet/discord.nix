@@ -1,13 +1,10 @@
 { den, ... }: {
-  den.aspects.discord = { user, ... }: {
+  den.aspects.internet.discord = let
+    discord = den.aspects.batteries.pkgs (pkgs: [ pkgs.discord ]);
+  in {
     includes = [
       (den.provides.unfree [ "discord" ])
+      discord
     ];
-
-    nixos = { pkgs, ... }: {
-      users.users.${user.userName}.packages = with pkgs; [
-        discord
-      ];
-    };
   };
 }

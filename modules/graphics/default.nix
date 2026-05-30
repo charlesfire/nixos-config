@@ -1,10 +1,9 @@
-{
-  den.aspects.graphics = { user, ... }: {
-    nixos = { pkgs, ... }: {
-      users.users.${user.userName}.packages = with pkgs; [
-        gimp
-        #unstable.graphite
-      ];
-    };
+{ den, ... }: {
+  den.aspects.graphics = {
+    includes = with den.aspects; [
+      graphics._
+    ];
+
+    gimp = den.aspects.batteries.pkgs (pkgs: [ pkgs.gimp ]);
   };
 }

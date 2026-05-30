@@ -1,20 +1,11 @@
 { den, ... }: {
-  den.aspects.development = { user, ... }: {
+  den.aspects.development = {
     includes = with den.aspects; [
-      direnv
-      docker
-      git
-      ollama
-      virt-manager
-      vscode
+      development._
     ];
 
-    nixos = { pkgs, ... }: {
-      users.users.${user.userName}.packages = with pkgs; [
-        kdePackages.kate
-        nixd
-        quickemu
-      ];
-    };
+    kate = den.aspects.batteries.pkgs (pkgs: [ pkgs.kdePackages.kate ]);
+    nixd = den.aspects.batteries.pkgs (pkgs: [ pkgs.nixd ]);
+    quickemu = den.aspects.batteries.pkgs (pkgs: [ pkgs.quickemu ]);
   };
 }

@@ -1,7 +1,5 @@
 {
-  den.aspects.direnv = {
-    nixos = { ... }: {
-      programs.direnv.enable = true;
-    };
+  den.aspects.development.direnv = {
+    nixos.programs.direnv.enable = true;
   };
 }

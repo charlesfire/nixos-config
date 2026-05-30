@@ -1,5 +1,5 @@
 { den, ... }: {
-  den.aspects.ollama = {
+  den.aspects.development.ollama = {
     includes = [
       (den.provides.unfree [ "open-webui" ])
     ];

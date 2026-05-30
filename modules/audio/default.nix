@@ -1,6 +1,6 @@
 {
   den.aspects.audio = {
-    nixos = { ... }: {
+    nixos = {
       # Enable sound with pipewire.
       services.pulseaudio.enable = false;
       security.rtkit.enable = true;

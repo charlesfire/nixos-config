@@ -1,8 +1,6 @@
 {
   den.aspects.printing = {
-    nixos = { ... }: {
-      # Enable CUPS to print documents.
-      services.printing.enable = true;
-    };
+    # Enable CUPS to print documents.
+    nixos.services.printing.enable = true;
   };
 }

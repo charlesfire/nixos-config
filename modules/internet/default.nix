@@ -1,19 +1,12 @@
 { den, ... }: {
-  den.aspects.internet = { user, ... }: {
+  den.aspects.internet = {
     includes = with den.aspects; [
-      discord
+      internet._
     ];
 
-    nixos = { pkgs, ... }: {
-      users.users.${user.userName}.packages = with pkgs; [
-        kdePackages.krdc
-        thunderbird
-        qbittorrent
-        element-desktop
-      ];
-
-      programs.firefox.enable = true;
-      programs.kdeconnect.enable = true;
-    };
+    element-desktop = den.aspects.batteries.pkgs (pkgs: [ pkgs.element-desktop ]);
+    krdc = den.aspects.batteries.pkgs (pkgs: [ pkgs.kdePackages.krdc ]);
+    qbittorrent = den.aspects.batteries.pkgs (pkgs: [ pkgs.qbittorrent ]);
+    thunderbird = den.aspects.batteries.pkgs (pkgs: [ pkgs.thunderbird ]);
   };
 }

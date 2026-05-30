@@ -1,6 +1,6 @@
-{ den, ... }: {
-  den.aspects.virt-manager = { user, ... }: {
-    nixos = { pkgs, ... }: {
+{
+  den.aspects.development.virt-manager = {
+    nixos = { user, ... }: {
       virtualisation.libvirtd = {
         enable = true;
         qemu.swtpm.enable = true;

@@ -1,13 +1,11 @@
 { den, ... }: {
-  den.aspects.obsidian = { user, ... }: {
+  den.aspects.utilities.obsidian =
+  let
+    obsidian = den.aspects.batteries.pkgs (pkgs: [ pkgs.obsidian ]);
+  in {
     includes = [
       (den.provides.unfree [ "obsidian" ])
+      obsidian
     ];
-
-    nixos = { pkgs, ... }: {
-      users.users.${user.userName}.packages = with pkgs; [
-        obsidian
-      ];
-    };
   };
 }

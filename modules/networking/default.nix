@@ -1,14 +1,7 @@
 { den, ... }: {
   den.aspects.networking = {
     includes = with den.aspects; [
-      wifi
-      bluetooth
+      networking._
     ];
-
-    nixos = { ... }: {
-      networking.firewall = {
-        enable = true;
-      };
-    };
   };
 }

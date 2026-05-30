@@ -1,5 +1,5 @@
 { den, ... }: {
-  den.aspects.multiworldgg = {
+  den.aspects.gaming.multiworldgg = {
     includes = with den.aspects; [
       appimage
     ];

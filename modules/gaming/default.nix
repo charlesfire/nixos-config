@@ -1,14 +1,7 @@
 { den, ... }: {
   den.aspects.gaming = {
     includes = with den.aspects; [
-      games
-      multiworldgg
-      peacock
-      steam
+      gaming._
     ];
-
-    nixos = { ... }: {
-      programs.gamemode.enable = true;
-    };
   };
 }
