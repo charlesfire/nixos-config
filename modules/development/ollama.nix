@@ -7,7 +7,7 @@
     nixos = { pkgs, ... }: {
       services.ollama = {
         enable = true;
-        loadModels = [ "qwen3-coder:30b" "qwen2.5-coder:14b" ];
+        loadModels = [ "qwen3-coder:30b" "qwen2.5-coder:14b" "qwen3-coder-next:latest" ];
         package = pkgs.ollama-rocm;
       };
       services.open-webui.enable = true;
