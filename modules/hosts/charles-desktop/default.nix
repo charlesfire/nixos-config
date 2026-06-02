@@ -22,6 +22,8 @@
         theme = "breeze";
       };
 
+      networking.hostName = "charles-desktop";
+
       environment.systemPackages = with pkgs; [
         eza
         parted
