@@ -20,6 +20,7 @@
           status = "auto";
           grep = "auto";
         };
+        pull.rebase = "true";
       };
     };
   };
