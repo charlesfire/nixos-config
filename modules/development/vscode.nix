@@ -17,8 +17,6 @@
             vscjava.vscode-java-dependency
             vscjava.vscode-gradle
             vscjava.vscode-maven
-            ms-vscode.live-server
-            saoudrizwan.claude-dev
           ];
         })
       ];

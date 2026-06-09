@@ -10,6 +10,7 @@
       multimedia
       office
       utilities
+      llama
     ];
 
     nixos = {
