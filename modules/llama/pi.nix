@@ -20,6 +20,7 @@
         gnutar
         diffutils
         gnused
+        agent-browser
       ];
       jailed-pi = jail "pi" inputs'.llm-agents.packages.pi (with jail.combinators; [
         network
