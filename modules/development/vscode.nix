@@ -11,6 +11,7 @@
             jnoortheen.nix-ide
             ms-azuretools.vscode-docker
             mkhl.direnv
+            naumovs.color-highlight
             redhat.java
             vscjava.vscode-java-debug
             vscjava.vscode-java-test

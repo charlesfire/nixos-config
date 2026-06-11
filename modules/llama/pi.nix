@@ -1,5 +1,7 @@
-{ inputs, ... }: {
+{ den, inputs, ... }: {
   den.aspects.llama.pi = {
+    includes = [ (den.provides.unfree [ "google-chrome" ]) ];
+
     nixos = { user, pkgs, inputs', ... }: 
     let
       jail = inputs.jail-nix.lib.init pkgs;
@@ -23,11 +25,13 @@
         agent-browser
         nodejs
         python3
+        google-chrome
       ];
       jailed-pi = jail "pi" inputs'.llm-agents.packages.pi (with jail.combinators; [
         network
         mount-cwd
         no-new-session
+        open-urls-in-browser
         (add-pkg-deps pi-packages)
         (readwrite (noescape "~/.pi"))
       ]);
