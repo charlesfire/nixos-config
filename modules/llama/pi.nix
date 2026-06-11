@@ -21,6 +21,8 @@
         diffutils
         gnused
         agent-browser
+        nodejs
+        python3
       ];
       jailed-pi = jail "pi" inputs'.llm-agents.packages.pi (with jail.combinators; [
         network
