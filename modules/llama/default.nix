@@ -1,11 +1,12 @@
 { den, ... }: {
-  den.aspects.llama = with den.aspects;{
+  den.aspects.llama = with den.aspects; {
     includes = [
       (den.provides.unfree [ "lmstudio" ])
       llama.pi
     ];
 
-    nixos = { user, pkgs, inputs', ... }: let
+    nixos = { user, pkgs, inputs', ... }:
+    let
       pi = pkgs.buildNpmPackage (finalAttrs: {
         pname = "pi";
         version = "0.79.0";
