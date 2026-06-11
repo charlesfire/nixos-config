@@ -31,6 +31,7 @@
         network
         mount-cwd
         no-new-session
+        gui
         open-urls-in-browser
         (add-pkg-deps pi-packages)
         (readwrite (noescape "~/.pi"))
