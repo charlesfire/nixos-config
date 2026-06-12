@@ -31,10 +31,11 @@
         network
         mount-cwd
         no-new-session
-        gui
+        gui # Without this, Pi won't be able to use agent-browser.
         open-urls-in-browser
         (add-pkg-deps pi-packages)
         (readwrite (noescape "~/.pi"))
+        (try-fwd-env "COLORTERM") # Without this, Pi won't be able to use the proper colors.
       ]);
     in {
       users.users.${user.userName}.packages = [
