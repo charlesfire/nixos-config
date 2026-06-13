@@ -5,8 +5,8 @@
       llama.pi
     ];
 
-    nixos = { user, pkgs, inputs', ... }: {
-      users.users.${user.userName}.packages = with pkgs; [
+    user = { pkgs, inputs', ... }: {
+      packages = with pkgs; [
         inputs'.nixpkgs-unstable.legacyPackages.llama-cpp-vulkan
         lmstudio
       ];

@@ -13,8 +13,8 @@
       llama
     ];
 
-    nixos = {
-      users.users.charles.description = "Charles Lachance";
+    user = {
+      description = "Charles Lachance";
     };
   };
 }

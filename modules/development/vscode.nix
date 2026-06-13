@@ -4,8 +4,8 @@
       (den.provides.unfree [ "vscode" "vscode-with-extensions" ])
     ];
 
-    nixos = { user, pkgs, ... }: {
-      users.users.${user.userName}.packages = with pkgs; [
+    user = { pkgs, ... }: {
+      packages = with pkgs; [
         (vscode-with-extensions.override {
           vscodeExtensions = with vscode-extensions; [
             jnoortheen.nix-ide

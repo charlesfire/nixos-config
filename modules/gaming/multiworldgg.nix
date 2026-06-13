@@ -4,7 +4,7 @@
       appimage
     ];
 
-    nixos = { user, pkgs, ... }: 
+    user = { pkgs, ... }: 
     let
       pname = "multiworldgg";
       version = "0.7.245";
@@ -16,7 +16,7 @@
 
       multiworldgg = pkgs.appimageTools.wrapType2 { inherit pname version src; };
     in {
-      users.users.${user.userName}.packages = [
+      packages = [
         multiworldgg
       ];
     };

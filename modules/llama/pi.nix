@@ -2,7 +2,7 @@
   den.aspects.llama.pi = {
     includes = [ (den.provides.unfree [ "google-chrome" ]) ];
 
-    nixos = { user, pkgs, inputs', ... }: 
+    user = { pkgs, inputs', ... }: 
     let
       jail = inputs.jail-nix.lib.init pkgs;
       pi-packages = with pkgs; [
@@ -38,7 +38,7 @@
         (try-fwd-env "COLORTERM") # Without this, Pi won't be able to use the proper colors.
       ]);
     in {
-      users.users.${user.userName}.packages = [
+      packages = [
         jailed-pi
       ];
     };

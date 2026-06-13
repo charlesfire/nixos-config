@@ -1,7 +1,7 @@
 let
   __functor = _self: getPkgs: {
-    nixos = { user, pkgs, ... }: {
-      users.users.${user.name}.packages = getPkgs pkgs;
+    user = { pkgs, ... }: {
+      packages = getPkgs pkgs;
     };
   };
 in {
