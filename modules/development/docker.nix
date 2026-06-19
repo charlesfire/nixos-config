@@ -1,8 +1,7 @@
 {
   den.aspects.development.docker = {
     nixos.virtualisation.docker = {
-      enable = true;
-      storageDriver = "btrfs";
+      enable = false;
       rootless = {
         enable = true;
         setSocketVariable = true;
