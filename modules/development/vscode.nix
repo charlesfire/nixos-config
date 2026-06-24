@@ -1,7 +1,11 @@
 { den, ... }: {
   den.aspects.development.vscode = {
     includes = [
-      (den.provides.unfree [ "vscode" "vscode-with-extensions" ])
+      (den.provides.unfree [
+        "vscode"
+        "vscode-with-extensions"
+        "vscode-extension-ms-vscode-remote-remote-containers"
+      ])
     ];
 
     user = { pkgs, ... }: {
@@ -10,6 +14,7 @@
           vscodeExtensions = with vscode-extensions; [
             jnoortheen.nix-ide
             ms-azuretools.vscode-docker
+            ms-vscode-remote.remote-containers
             mkhl.direnv
             naumovs.color-highlight
             redhat.java
