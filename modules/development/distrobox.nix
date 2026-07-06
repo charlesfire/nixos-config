@@ -1,9 +1,8 @@
-{
+{ den, ... }: {
   den.aspects.development.distrobox = {
-    nixos.virtualisation.podman = {
-      enable = true;
-      dockerCompat = true;
-    };
+    includes = with den.aspects; [
+      development.docker
+    ];
 
     user = { pkgs, ... }: {
       packages = [ pkgs.distrobox pkgs.kontainer ];
