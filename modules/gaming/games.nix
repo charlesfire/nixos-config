@@ -6,7 +6,7 @@
 
     airshipper = den.aspects.batteries.pkgs (pkgs: [ pkgs.airshipper ]);
     archipelago = den.aspects.batteries.pkgs (pkgs: [ pkgs.archipelago ]);
-    faugus-launcher = den.aspects.batteries.pkgs (pkgs: [ pkgs.faugus-launcher ]);
+    bottles = den.aspects.batteries.pkgs (pkgs: [ pkgs.bottles ]);
     kate = den.aspects.batteries.pkgs (pkgs: [ pkgs.kdePackages.kate ]);
     nixd = den.aspects.batteries.pkgs (pkgs: [ pkgs.nixd ]);
     openrct2 = den.aspects.batteries.pkgs (pkgs: [ pkgs.openrct2 ]);
