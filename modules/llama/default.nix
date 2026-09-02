@@ -8,7 +8,9 @@
     user = { pkgs, inputs', ... }: {
       packages = with pkgs; [
         inputs'.nixpkgs-unstable.legacyPackages.llama-cpp-vulkan
+        koboldcpp
         lmstudio
+        sillytavern
       ];
     };
   };
