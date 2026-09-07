@@ -26,6 +26,7 @@
         nodejs
         python3
         google-chrome
+        inputs'.llm-agents.packages.pi
       ];
       jailed-pi = jail "pi" inputs'.llm-agents.packages.pi (with jail.combinators; [
         network
