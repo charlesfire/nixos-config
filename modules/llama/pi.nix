@@ -5,6 +5,7 @@
     user = { pkgs, inputs', ... }: 
     let
       jail = inputs.jail-nix.lib.init pkgs;
+      pi = inputs'.nixpkgs-unstable.legacyPackages.pi-coding-agent;
       pi-packages = with pkgs; [
         bashInteractive
         curl
@@ -26,9 +27,9 @@
         nodejs
         python3
         google-chrome
-        inputs'.llm-agents.packages.pi
+        pi
       ];
-      jailed-pi = jail "pi" inputs'.llm-agents.packages.pi (with jail.combinators; [
+      jailed-pi = jail "pi" pi (with jail.combinators; [
         network
         mount-cwd
         no-new-session

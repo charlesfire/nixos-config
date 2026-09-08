@@ -11,6 +11,7 @@
         koboldcpp
         lmstudio
         sillytavern
+        inputs'.nixpkgs-unstable.legacyPackages.comfyui
       ];
     };
   };
